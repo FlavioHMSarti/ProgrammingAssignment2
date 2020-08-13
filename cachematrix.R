@@ -20,14 +20,14 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
-  setMAT <- function(y) {
-    x <<- y
+  setMAT <- function(y) {                    # if user provides, setMAT <- arg1
+    x <<- y                                  # if not, setMAT <- NULL
     m <<- NULL
   }
-  getMAT <- function() x
-  setINV <- function(solve) m <<- solve
-  getINV <- function() m
-  list(setMAT = setMAT, getMAT = getMAT,
+  getMAT <- function() x                    # print the stored matrix
+  setINV <- function(solve) m <<- solve     
+  getINV <- function() m                    # print the inverse matrix
+  list(setMAT = setMAT, getMAT = getMAT,    # list with 4 arguments(functions)
        setINV = setINV,
        getINV = getINV)
 
